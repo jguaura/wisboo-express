@@ -1,4 +1,4 @@
-@import "_global";
+@import "../_global";
 @import "_dashboard-mixins";
 * {
   padding: 0;
@@ -481,6 +481,7 @@
                 a {
                   color: $gray;
                   font-weight: 600;
+                  text-decoration: none;
                 }
               }
             }
