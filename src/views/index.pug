@@ -1,0 +1,54 @@
+extends layout.pug
+//- Mixins start
+mixin navItem(item)
+    li
+        a(href="#")= item
+mixin inputGroup (category, index)
+    .input-group
+        input(type="checkbox" id=`check-${index}`)
+        label(for=`check-${index}`)= category
+mixin product(product)
+    .product-card
+        img(src=`${product.img}`)
+        h5= product.name
+        h6=`$${product.price}`
+//- Mixins end
+
+block append head
+    style
+        include ../public/css/nomads.style.css
+block content
+    .nomads
+        nav.nomads-nav
+            .nomads-nav__list
+                ul
+                    +navItem("inicio")
+                    +navItem("comprar")
+                    +navItem("blog")
+            .nomads-nav__logo
+                h1 NOMADS
+        h2.nomads-header Productos
+        .nomads-container
+            aside.search
+                .search-byname
+                    input(type="text" placeholder="Buscar por nombre")
+                    .icon-Buscar
+                .search-byprice
+                    .search-byprice__header
+                        span Precio $
+                        .icon-Flecha-Dropdown
+                    form
+                        input(type="number" placeholder="Monto mínimo")
+                        input(type="number" placeholder="Monto máximo")
+                        button aplicar filtro
+                .search-bycategory
+                    .search-bycategory__header
+                        span Categoría
+                        .icon-Flecha-Dropdown
+                    .search-bycategory__checklist
+                        form
+                            each category, index in categories
+                                +inputGroup(category, index)
+            .nomads-container__products
+                each product in products
+                    +product(product)

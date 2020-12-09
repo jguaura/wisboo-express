@@ -1,0 +1,38 @@
+extends layout
+block append head
+    style
+        include ../public/css/product.style.css
+block content
+    .product
+        nav.nomads-nav
+            .nomads-nav__list
+                ul
+                    li
+                        a(href="#") inicio
+                    li
+                        a(href="#") comprar
+                    li
+                        a(href="#") blog
+            .nomads-nav__logo
+                h1 NOMADS
+        .product-container
+            .product-container__img
+                img(src="https://res.cloudinary.com/jguaura/image/upload/q_100/v1607472220/briefcase_yqpcwa.webp")
+            .product-container__description
+                .product-description
+                    .product-description__header
+                        h3 Commuter Briefcase
+                        h2 $199.00
+                    .product-description__buttons
+                        button agregar al carrito
+                        button.secondary comprar ahora
+                    .product-description__text
+                        p.
+                            Topo Designs is rooted in mountain culture and
+                            outdoor living. They look to the classics for
+                            inspiration and technical innovations to create
+                            their timeliness look with modern functionality.
+                            #[br]
+                            #[br]
+                            Check out their full line of bags, accessories and
+                            apparel here.

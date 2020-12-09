@@ -1,0 +1,101 @@
+@import "_global.scss";
+
+* {
+  @include style-reset;
+}
+.nomads {
+  &-nav {
+    @include navbar;
+    margin-bottom: 82px;
+  }
+  &-header {
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 55px 0;
+  }
+  &-container {
+    padding: 0 0 50px 51px;
+    display: flex;
+    .search {
+      width: 250px;
+      min-width: 259px;
+      &-byname {
+        position: relative;
+        input {
+          @include input;
+          margin-bottom: 31px;
+        }
+        .icon-Buscar {
+          position: absolute;
+          position: absolute;
+          top: 12px;
+          right: 15px;
+          color: $graySecondary;
+        }
+      }
+      &-byprice {
+        border: 1px solid $gray;
+        border-width: 1px 0 1px 0;
+        padding: 29px 0 31px 0;
+
+        &__header {
+          @include faux-select;
+        }
+        input {
+          @include input;
+          margin-top: 4px;
+          margin-bottom: 3px;
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          &:last-of-type {
+            margin-top: 0;
+            margin-bottom: 13px;
+          }
+        }
+        button {
+          @include button;
+        }
+      }
+      &-bycategory {
+        padding: 28px 0 0 0;
+        &__header {
+          @include faux-select;
+        }
+        &__checklist {
+          .input-group {
+            @include input-group;
+          }
+        }
+      }
+    }
+    &__products {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 220px);
+      gap: 42px 50px;
+      padding-left: 50px;
+      padding-right: 50px;
+
+      .product-card {
+        img {
+          width: 100%;
+          height: 217px;
+        }
+        h5 {
+          font-size: 20px;
+          font-weight: 600;
+          margin: 23px 0 5px 0;
+        }
+        h6 {
+          font-size: 18px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}

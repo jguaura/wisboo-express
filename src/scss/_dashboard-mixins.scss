@@ -1,0 +1,335 @@
+@mixin hero-circles {
+  display: flex;
+  .circle {
+    @include flex-center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    background-color: $gray;
+    border-radius: 50%;
+    &:last-of-type {
+      background-color: #fff;
+      box-shadow: 0 4px 8px 0 rgba(142, 24, 86, 0.2);
+      position: relative;
+      left: -15px;
+    }
+    .card {
+      width: 22px;
+      height: 14px;
+      background: #a8acb4;
+      padding-top: 3px;
+      border-radius: 1px;
+      .band {
+        background-color: #000;
+        height: 3px;
+      }
+      .square {
+        background-color: #828388;
+        width: 5px;
+        height: 2px;
+        margin: 3px 0 0 13px;
+      }
+    }
+    .shapes {
+      height: 12px;
+      width: 22px;
+      display: flex;
+      align-items: center;
+      .shape {
+        width: 26px;
+        height: 100%;
+        position: relative;
+        border-radius: 50%;
+        &.s-1 {
+          background-color: #59595d;
+          left: 4px;
+        }
+        &.s-2 {
+          width: 8px;
+          height: 10px;
+          background-color: #b0b4bd;
+          z-index: 1;
+        }
+        &.s-3 {
+          background-color: #828386;
+          right: 4px;
+        }
+      }
+    }
+  }
+}
+
+@mixin credit-card {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  padding: 28px 29px 25px 32px;
+  color: #fff;
+  &:first-of-type {
+    background-image: url("https://res.cloudinary.com/jguaura/image/upload/v1607472218/card_vez1ka.webp");
+  }
+  &:last-of-type {
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      width: 341px;
+      height: 199px;
+      background-image: url("https://res.cloudinary.com/jguaura/image/upload/v1607472218/card_vez1ka.webp");
+      background-size: cover;
+      transform: rotate(180deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 15px;
+    }
+  }
+  &-numbers {
+    color: inherit;
+    width: 209px;
+    @include flex-between;
+    margin-bottom: 5px;
+  }
+  &-date {
+    color: inherit;
+    @include flex-between;
+    align-items: center;
+    &__circles {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .circle {
+        height: 29px;
+        width: 29px;
+        background-color: #fff;
+        border-radius: 50%;
+        position: relative;
+        &:first-of-type {
+          left: 15px;
+          opacity: 0.4;
+        }
+        &:last-of-type {
+          opacity: 0.8;
+          right: 0;
+        }
+        &.oval {
+          width: 15px;
+          height: 25px;
+          position: absolute;
+          left: 60%;
+          transform: translateX(-50%);
+          z-index: 1;
+        }
+      }
+    }
+  }
+  span {
+    font-size: 15px;
+    font-weight: lighter;
+    color: inherit;
+  }
+  h4 {
+    font-size: 37px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+}
+
+@mixin linechart-1 {
+  &.l-2 {
+    width: 40px;
+    left: 59px;
+    transform: rotate(-53deg);
+    bottom: 14px;
+  }
+  &.l-3 {
+    width: 27px;
+    left: 89.5px;
+    bottom: 29px;
+  }
+  &.l-4 {
+    width: 40px;
+    transform: rotate(49deg);
+    left: 108px;
+    bottom: 14px;
+  }
+  &.l-5 {
+    width: 62px;
+    position: relative;
+    transform: rotate(-66deg);
+    bottom: 28px;
+    left: 121px;
+    z-index: -1;
+  }
+  &.l-6 {
+    width: 39px;
+    bottom: 41px;
+    left: 160px;
+    transform: rotate(45deg);
+  }
+  &.l-7 {
+    width: 43px;
+    right: 46px;
+    bottom: 40px;
+    transform: rotate(-44deg);
+  }
+  &.l-8 {
+    width: 27px;
+    right: 26px;
+    top: 24px;
+  }
+  &.l-9 {
+    width: 39px;
+    right: -7px;
+    transform: rotate(-45deg);
+    top: 12px;
+  }
+}
+
+@mixin linechart-2 {
+  .l-2 {
+    width: 32px;
+    left: 13px;
+    transform: rotate(-44deg);
+    bottom: 11px;
+  }
+  .l-3 {
+    width: 35px;
+    left: 34.5px;
+    bottom: 11px;
+    transform: rotate(45deg);
+  }
+  .l-4 {
+    width: 36px;
+    transform: rotate(-40deg);
+    left: 58px;
+    bottom: 9px;
+  }
+  .l-5 {
+    width: 29px;
+    position: relative;
+    bottom: 20px;
+    transform: rotate(-1deg);
+    left: 88.5px;
+    z-index: -1;
+  }
+  .l-6 {
+    width: 39px;
+    bottom: 35px;
+    left: 109px;
+    transform: rotate(-49deg);
+  }
+  .l-7 {
+    width: 43px;
+    transform: rotate(41deg);
+    left: 134px;
+    bottom: 35px;
+  }
+  .l-8 {
+    width: 40px;
+    right: 73px;
+    top: 14px;
+    transform: rotate(-50deg);
+  }
+  .l-9 {
+    width: 42px;
+    transform: rotate(47deg);
+    right: 47px;
+    top: 14px;
+  }
+  .l-10 {
+    width: 40px;
+    right: 22px;
+    top: 15px;
+    transform: rotate(-49deg);
+  }
+  .l-11 {
+    width: 31px;
+    top: 01px;
+    right: -1px;
+  }
+}
+
+@mixin linechart-3 {
+  .l-2 {
+    width: 32px;
+    left: 13px;
+    bottom: 11px;
+    transform: rotate(-44deg);
+  }
+  .l-3 {
+    width: 35px;
+    left: 34.5px;
+    bottom: 11px;
+    transform: rotate(45deg);
+  }
+  .l-4 {
+    width: 37px;
+    left: 58px;
+    bottom: 11px;
+    transform: rotate(-41deg);
+  }
+  .l-5 {
+    width: 37px;
+    left: 84px;
+    bottom: 11px;
+    transform: rotate(41deg);
+  }
+  .l-6 {
+    width: 37px;
+    left: 109px;
+    bottom: 11px;
+    transform: rotate(-41deg);
+  }
+  .l-7 {
+    width: 30px;
+    position: relative;
+    bottom: 21.5px;
+    transform: rotate(0deg);
+    left: 103px;
+  }
+  .l-8 {
+    width: 39px;
+    transform: rotate(-49deg);
+    right: 75px;
+    top: 14px;
+  }
+  .l-9 {
+    width: 30px;
+    transform: rotate(0deg);
+    right: 53px;
+    top: 0;
+  }
+  .l-10 {
+    width: 39px;
+    transform: rotate(49deg);
+    right: 24px;
+    top: 14px;
+  }
+  .l-11 {
+    width: 30px;
+    bottom: 21.5px;
+    transform: rotate(0deg);
+    right: 2px;
+  }
+}
+
+@mixin bullet-point($background) {
+  &:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $background;
+    display: inline-block;
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
